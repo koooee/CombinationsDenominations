@@ -1,0 +1,20 @@
+#!/bin/bash
+if [ ! -e "combin" ]
+then
+    echo -n 'compiled binary "combin" does not exist. Compiling...';
+    gcc -o combin Main.c -lm;
+    echo 'Done.'
+fi
+(echo 'Test Case 1: ' $(./combin 0.00))
+(echo 'Test Case 2: ' $(./combin 1.2134))
+(echo 'Test Case 3: ' $(./combin ase3412.53))
+(echo 'Test Case 4: ' $(./combin 12.3gqe13))
+(echo 'Test Case 5: ' $(./combin 56.32trg))
+(echo 'Test Case 6: ' $(./combin -12.34))
+(echo 'Test Case 7: ' $(./combin -12..23))
+(echo 'Test Case 8: ' $(./combin -0.00))
+(echo 'Test Case 9: ' $(./combin -.000))
+(echo 'Test Case 10: ' $(./combin 1.-23))
+(echo 'Test Case 11: ' $(./combin 234523542354234512341253423542354.125341253423542354235423))
+(echo 'Test Case 12: ' $(./combin 0.234234234234234232423423423423423424234))
+(echo 'Test Case 13: ' $(./combin 3423423423423424234234234234234.0))

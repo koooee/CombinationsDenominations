@@ -1,0 +1,21 @@
+How to use it:
+-------------
+
+/path/to/code$ gcc Main.c -lm
+/path/to/code$ ./a.out 12.34
+
+if you are just looking for the guts of the code take a look at Denom.c; combinations function;
+
+For convenience there is a bash script called 'run_me'. It will compile the code and run a few test cases.  Make sure you cd to the root folder of where you extracted the code otherwise the script will not work.
+
+Known Issues
+------------
+I do a check to see if the input number can be calculated by my function (given the denominations).  But, it can't technically work for all cases since there is limited precision with double. I limited it to 2^40 since I was getting unexpected behavior with some of the math.h functions...not quite sure why. 
+
+I also do a boolean comparison that will break if precision error is greater than thousandths.
+
+Assumptions
+-----------
+I am making an assumption that precision is valued over speed, thus, the double precision floating point.  If that is not the case, perhaps single precision floating point would be a better choice, or even dividing by the smallest denomination to make integers would save some computation speed, space...sanity..etc..
+
+I am also making the assumption this will work with other platforms since I am only using the standard C library.  The only platform this was tested on was Slackware Linux 32bit (only platform I have available)
